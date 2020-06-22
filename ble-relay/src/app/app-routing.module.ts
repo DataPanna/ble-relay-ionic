@@ -10,7 +10,11 @@ const routes: Routes = [
   {
     path: 'home/:id',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },  {
+    path: 'relay',
+    loadChildren: () => import('./relay/relay.module').then( m => m.RelayPageModule)
   }
+
 ];
 
 @NgModule({
