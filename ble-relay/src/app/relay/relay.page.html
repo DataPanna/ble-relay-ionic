@@ -16,5 +16,18 @@
 
   <div id="container">
     <ion-button (click)="scan()">Click to Scan</ion-button>
+    <p>{{ statusMessage }}</p>
+    <ion-content>
+      <ion-list> 
+        <ion-item click="" device="" deviceselected="" ngfor="let device of devices">
+          <ion-label>
+            <!--<h2>{{ device.name || 'Unnamed' }}</h2>
+              {{ device.id }}
+              RSSI: {{ device.rssi }}-->
+              device
+          </ion-label> 
+        </ion-item>
+       </ion-list> 
+    </ion-content>
   </div>
 </ion-content>
