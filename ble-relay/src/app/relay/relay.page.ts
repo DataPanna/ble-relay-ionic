@@ -5,11 +5,17 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './relay.page.html',
   styleUrls: ['./relay.page.scss'],
 })
-export class RelayPage implements OnInit {
+export class RelayPage {
 
-  constructor() { }
+  devices: any[] = [];
+  statusMessage: string;
 
-  ngOnInit() {
+  constructor() {
+                
   }
 
+  scan() {
+    console.log('scan clicked');
+  }
+  
 }
