@@ -1,6 +1,6 @@
 import { Component, NgZone } from '@angular/core';
 import { BLE } from '@ionic-native/ble/ngx';
-import { ToastController } from '@ionic/angular'
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-relay',
@@ -15,7 +15,6 @@ export class RelayPage {
   constructor(private ble: BLE,
               private toast: ToastController,
               private ngZone: NgZone) {
-                
   }
 
   scan() {
@@ -26,12 +25,11 @@ export class RelayPage {
       device => this.onDeviceDiscovered(device),
       error => this.scanError(error)
     );
-    
-    setTimeout(this.setStatus.bind(this), 25000, "Scan complete");
+    setTimeout(this.setStatus.bind(this), 25000, 'Scan complete');
   }
 
   onDeviceDiscovered(device) {
-    console.log("Discovered " + JSON.stringify(device, null, 2));
+    console.log('Discovered ' + JSON.stringify(device, null, 2));
     this.ngZone.run(() => {
       this.devices.push(device);
     });
@@ -39,10 +37,10 @@ export class RelayPage {
 
   // If location permission is denied, you'll end up here
   async scanError(error) {
-    this.setStatus("Error " + error);
-    let toast = await this.toast.create({
-      message: "Error scanning for Bluetooth low energy devices",
-      position: "middle",
+    this.setStatus('Error ' + error);
+    const toast = await this.toast.create({
+      message: 'Error scanning for Bluetooth low energy devices',
+      position: 'middle',
       duration: 5000
     });
     toast.present();
