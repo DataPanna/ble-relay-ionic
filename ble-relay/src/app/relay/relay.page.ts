@@ -31,7 +31,9 @@ export class RelayPage {
   }
 
   onDeviceDiscovered(device) {
-    console.log("Discovered " + JSON.stringify(device, null, 2));
+    // console.log("Discovered " + JSON.stringify(device, null, 2));
+    this.setStatus("Discovered " + JSON.stringify(device, null, 2));
+
     this.ngZone.run(() => {
       this.devices.push(device);
     });
